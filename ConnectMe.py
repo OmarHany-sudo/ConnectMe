@@ -8,15 +8,15 @@ import sys
 
 # ASCII art banner for ConnectMe
 banner = """
-  ______                _     _   
- |  ____|              | |   | |  
- | |__   __ _ _ __ ___ | | __| |  
- |  __| / _` | '_ ` _ \| |/ _` | 
+  ______                _     _
+ |  ____|              | |   | |
+ | |__   __ _ _ __ ___ | | __| |
+ |  __| / _` | '_ ` _ \| |/ _` |
  | |___| (_| | | | | | | | (_| |
- |______\__,_|_| |_| |_|_|__,_|  
-                                 
+ |______\__,_|_| |_| |_|_|__,_|
+
     Developed by Omar Hany
-    ConnectMe - Link Social Profiles
+    ConnectMe - Social Media Profile Lookup
 """
 
 # Function to print the banner
@@ -63,7 +63,8 @@ def search_profiles(identifier):
                 }
     
     # Search for Twitter profiles
-    twitter_data = fetch_profile('https://api.twitter.com/2/users/by/username/{}'.format(identifier), 
+    twitter_data = fetch_profile('https://api.twitter.com/2/users/by/username/{}'.format(identifier),
+                                 params={}, 
                                  headers={'Authorization': 'Bearer YOUR_TWITTER_BEARER_TOKEN'})
     if twitter_data and 'data' in twitter_data:
         results['Twitter'] = {
